@@ -71,8 +71,8 @@ setWithActivityNames <- merge(setForMeanAndStd, activityLabels,
 # 5. Creating a second, independent tidy data set with the average of each variable for each activity and each subject:
 
 # 5.1 Making second tidy data set 
-secTidySet <- aggregate(. ~subjectId + activityId, setWithActivityNames, mean)
-secTidySet <- secTidySet[order(secTidySet$subjectId, secTidySet$activityId),]
+TidySet <- aggregate(. ~subjectId + activityId, setWithActivityNames, mean)
+TidySet <- secTidySet[order(secTidySet$subjectId, secTidySet$activityId),]
 
 # 5.2 Writing second tidy data set in txt file
-write.table(secTidySet, "secTidySet.txt", row.name=FALSE)
+write.table(TidySet, "TidySet.txt", row.name=FALSE)
